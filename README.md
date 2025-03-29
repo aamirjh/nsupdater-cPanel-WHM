@@ -41,8 +41,10 @@ A powerful, interactive, and production-safe script to **bulk update NS (Nameser
 
 ## 📥 Quick Install
 
+From https://github.com/thekugelblitz/nsupdater-cPanel-WHM
+
 ```bash
-wget https://raw.githubusercontent.com/thekugelblitz/nsupdater-cPanel/main/nsupdater.sh -O nsupdater_v2.sh
+wget https://raw.githubusercontent.com/thekugelblitz/nsupdater-cPanel-WHM/main/nsupdater.sh -O nsupdater_v2.sh
 chmod +x nsupdater_v2.sh
 ```
 
