@@ -1,8 +1,9 @@
 # nsupdater-cPanel
-Bulk Update Nameservers in cPanel Zone Editor with Reliability and Backups!
+Bulk Update Nameservers in cPanel Zone Editor with Reliability and Backups! 
 
 **Author:** Developed by **Dhruval Joshi from [HostingSpell.com](https://hostingspell.com/)**. | Personal: [TheDhruval.com](https://thedhruval.com/)
 **GitHub:** [@thekugelblitz](https://github.com/thekugelblitz)  
+This script was created by me & optimized by ChatGPT 4 later.
 
 ---
 
@@ -17,7 +18,7 @@ A powerful, interactive, and production-safe script to **bulk update NS (Nameser
 - 🔄 **Dynamic NS Replacement** – Supports any number of old and new NS entries.  
 - 🔍 **Dry-Run Mode** – Preview changes before applying them.  
 - ♻️ **Rollback Mode** – Restore all DNS zones from backup with one command.  
-- 📁 **Centralized Backup** – All zone files backed up to a timestamped folder.  
+- 📁 **Centralized Backup** – All zone files are backed up to a timestamped folder.  
 - 📊 **Summary Report** – Clear output of domains updated, skipped, or failed.  
 - 🧾 **Log File** – All actions logged to `/root/nsupdater.log`.  
 - 🧠 **Smart Exclusion** – Automatically excludes the domain associated with your new NS.  
@@ -25,14 +26,30 @@ A powerful, interactive, and production-safe script to **bulk update NS (Nameser
 
 ---
 
-## 📂 File Structure
+## 📥 What It Does
 
+1. Prompts for the number of old and new NS entries.
+2. Automatically excludes the domain associated with new NS (e.g., `host3k.com`).
+3. Backs up all DNS zone files before any change to a timestamped folder.
+4. Replaces old NS entries with new ones using `sed`.
+5. Updates the DNS serial number to ensure propagation.
+6. Reloads DNS configuration only once after all changes.
+7. Logs all activity to `/root/nsupdater.log`.
+8. It provides a final summary with counts and paths.
+
+---
+
+## 📥 Quick Install
+
+```bash
+wget https://raw.githubusercontent.com/thekugelblitz/nsupdater-cPanel/main/nsupdater.sh -O nsupdater_v2.sh
+chmod +x nsupdater_v2.sh
 ```
-/root/
-├── nsupdater_v2.sh                     # Main script
-├── nsupdater.log                       # Action log
-└── nsupdater_backup_YYYYMMDD_HHMM/     # Folder with backups
-    └── domain.com.db.bak
+
+Then run the script using:
+
+```bash
+./nsupdater_v2.sh
 ```
 
 ---
@@ -65,18 +82,15 @@ Run it as needed:
 ./nsupdater_v2.sh --rollback
 ```
 
----
+## 📂 File Structure
 
-## 📥 What It Does
-
-1. Prompts for number of old and new NS entries.
-2. Automatically excludes the domain associated with new NS (e.g., `host3k.com`).
-3. Backs up all DNS zone files before any change to a timestamped folder.
-4. Replaces old NS entries with new ones using `sed`.
-5. Updates the DNS serial number to ensure propagation.
-6. Reloads DNS configuration only once after all changes.
-7. Logs all activity to `/root/nsupdater.log`.
-8. Provides a final summary with counts and paths.
+```
+/root/
+├── nsupdater_v2.sh                     # Main script
+├── nsupdater.log                       # Action log
+└── nsupdater_backup_YYYYMMDD_HHMM/     # Folder with backups
+    └── domain.com.db.bak
+```
 
 ---
 
@@ -115,7 +129,7 @@ Log file:                    /root/nsupdater.log
 
 - Must be run as `root`
 - Assumes `.db` zone files exist in `/var/named/`
-- Automatically creates backup folder and log file
+- Automatically creates the backup folder and log file
 
 ---
 
