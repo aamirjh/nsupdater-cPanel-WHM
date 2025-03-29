@@ -144,5 +144,3 @@ Developed by **Dhruval Joshi** from **[HostingSpell](https://hostingspell.com)**
 GitHub Profile: [@thekugelblitz](https://github.com/thekugelblitz)
 
 ---
-
-Let me know if you’d like me to bundle this into a GitHub repo for you or generate a ZIP with the script + README!
