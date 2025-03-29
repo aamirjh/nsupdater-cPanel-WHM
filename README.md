@@ -1,5 +1,5 @@
 # nsupdater-cPanel
-Bulk Update Nameservers in cPanel Zone Editor with Reliability and Backups! 
+Bulk Update Nameservers in cPanel/WHM Zone Editor with Reliability and Backups! 
 
 **Author:** Developed by **Dhruval Joshi from [HostingSpell.com](https://hostingspell.com/)**. | Personal: [TheDhruval.com](https://thedhruval.com/)
 **GitHub:** [@thekugelblitz](https://github.com/thekugelblitz)  
